@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-coredata-support",
+    name: "swift-core-data-support",
     platforms: [.iOS(.v16)],
     products: [
         .library(

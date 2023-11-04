@@ -1,0 +1,25 @@
+name: Run All Test
+
+on:
+  push:
+    branches:
+      - main
+      - 'releases/**'
+  pull_request:
+    branches:
+      - main
+      - 'releases/**'
+
+jobs:
+  run-all-tests:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v1
+      - name: List Xcode Versions
+        run: ls /Applications | grep Xcode
+      - name: Select Xcode
+        run: sudo xcode-select -switch /Applications/Xcode_15.0.1.app/Contents/Developer
+      - name: List SDKs
+        run: xcodebuild -showsdks
+      - name: Run all tests on iOS
+        run: xcodebuild -scheme swift-core-data-support -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 15 Pro' test
