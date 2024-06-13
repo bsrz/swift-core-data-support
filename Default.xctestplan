@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "F53F709D-679C-4D8E-9B48-E93A4983AB18",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "CoreDataSupportTests",
+        "name" : "CoreDataSupportTests"
+      }
+    }
+  ],
+  "version" : 1
+}
