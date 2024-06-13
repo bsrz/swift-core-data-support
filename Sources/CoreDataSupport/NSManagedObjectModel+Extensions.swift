@@ -7,7 +7,7 @@ extension NSManagedObjectModel {
     ///   - directory: The directory in which to look for models
     ///   - bundle: The bundle containing the models
     /// - Returns: An array of ``URL`` of all available models
-    private static func urls(inDirectory directory: String, in bundle: Bundle) -> [URL] {
+    public static func urls(inDirectory directory: String, in bundle: Bundle) -> [URL] {
         bundle
             .urls(
                 forResourcesWithExtension: "mom",
@@ -22,7 +22,7 @@ extension NSManagedObjectModel {
     ///   - directory: The directory in which to look for models
     ///   - bundle: The bundle containing the models
     /// - Returns: An array of all available ``NSManagedObjectModel``
-    static func models(inDirectory directory: String, in bundle: Bundle) -> [NSManagedObjectModel] {
+    public static func models(inDirectory directory: String, in bundle: Bundle) -> [NSManagedObjectModel] {
         urls(inDirectory: directory, in: bundle)
             .compactMap(NSManagedObjectModel.init)
     }
@@ -33,7 +33,7 @@ extension NSManagedObjectModel {
     ///   - named: The name of the model to look for
     ///   - bundle: The bundle containing the models
     /// - Returns: The model with a specific name if found, an empty model otherwise
-    static func model(inDirectory directory: String, named: String, in bundle: Bundle) -> NSManagedObjectModel {
+    public static func model(inDirectory directory: String, named: String, in bundle: Bundle) -> NSManagedObjectModel {
         let found = urls(inDirectory: directory, in: bundle)
             .filter { $0.lastPathComponent == "\(named).mom" }
             .first

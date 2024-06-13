@@ -23,6 +23,12 @@ public class Stack {
         }
     }
 
+    /// Initializes a new ``Stack``
+    /// - Parameter container: The persistent container backing the stack
+    public init(container: NSPersistentContainer) {
+        self.container = container
+    }
+
     /// The view context
     public var context: NSManagedObjectContext { container.viewContext }
 

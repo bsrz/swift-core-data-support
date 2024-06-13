@@ -31,7 +31,7 @@ public class StackBuilder {
 
     /// Creates a new stack and attempts to migrate the store (if enabled) in the process
     ///
-    /// The caller should be retaining
+    /// The caller should be retaining the stack as needed.
     ///
     /// - Returns: A new stack
     public func makeStack() -> Stack {
