@@ -4,7 +4,7 @@ import CoreData
 /// and make new background ``NSManagedObjectContext`` instances
 public class Stack {
 
-    let container: NSPersistentContainer
+    public let container: NSPersistentContainer
 
     /// Initializes a new ``Stack``
     /// - Parameters:
